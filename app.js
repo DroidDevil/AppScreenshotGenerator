@@ -75,7 +75,7 @@ $(function() {
             this.listenTo(this.model, 'destroy', this.remove);
             this.$el.draggable({ revert: "invalid", helper: "clone", opacity: 0.9, snap: ".workspace-template", snapMode: "inner" });
             this.$el.attr("data-id", this.model.cid);
-            this.$el.width("10%");
+            this.$el.width("5%");
         },
 
         render: function() {
@@ -95,6 +95,7 @@ $(function() {
 
         initialize: function() {
             this.$el.attr("src", this.model.get("url"));
+            this.$el.width("10%");
             this.$el.addClass("template");
 
             this.$el.dblclick(_.bind(this.onDoubleClick, this));
@@ -384,9 +385,18 @@ $(function() {
     });
 
     var templateData = [
+        { url: "templates/android/galaxy-nexus.png", x: 150, y: 226, w: 503, h: 823 },
+        { url: "templates/android/galaxy-note.png", x: 168, y: 206, w: 465, h: 848 },
+        { url: "templates/android/nexus-s.png", x: 143, y: 241, w: 513, h: 784 },
+        { url: "templates/android/nexus7.png", x: 159, y: 225, w: 482, h: 846 },
+        { url: "templates/android/one-x.png", x: 181, y: 201, w: 434, h: 845 },
+        { url: "templates/android/s3.png", x: 181, y: 202, w: 433, h: 844 },
+        { url: "templates/android/tab2.png", x: 191, y: 190, w: 419, h: 877 },
+        { url: "templates/android/xoom.png", x: 133, y: 150, w: 534, h: 965 },
+
         // { url: "templates/1.jpg", x: 80, y: 118, w: 98, h: 143, rot: -0.060 },
-        { url: "templates/2.jpg", x: 124, y: 57, w: 124, h: 182 },
-        { url: "templates/3.jpg", x: 121, y: 93, w: 128, h: 85 },
+        // { url: "templates/2.jpg", x: 124, y: 57, w: 124, h: 182 },
+        // { url: "templates/3.jpg", x: 121, y: 93, w: 128, h: 85 },
         // { url: "templates/4.jpg", x: 107, y: 91, w: 60, h: 98 },
         // { url: "templates/5.jpg" },
     ];
