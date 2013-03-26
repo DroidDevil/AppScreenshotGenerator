@@ -421,4 +421,22 @@ $(function() {
     var screenshot = new Screenshot;
     screenshot.setFromSrc("screen2.png");
     screenshots.add(screenshot);
+
+    $("#download").click(function() {
+        if (workspaceTemplates.length == 0) {
+            return;
+        }
+
+        var zip = new JSZip();
+        var folder = zip.folder("AppScreenshotGenerator");
+
+        $("#workspace canvas").each(function() {
+            var dataUrl = this.toDataURL("image/png");
+            var imgData = dataUrl.replace(/^data:image\/(png|jpg);base64,/, "");
+            folder.file("ASG1.png", imgData, { base64: true });
+        });
+
+        var content = zip.generate();
+        location.href="data:application/zip;base64,"+content;
+    });
 });
