@@ -430,10 +430,11 @@ $(function() {
         var zip = new JSZip();
         var folder = zip.folder("AppScreenshotGenerator");
 
+        var i = 1;
         $("#workspace canvas").each(function() {
             var dataUrl = this.toDataURL("image/png");
             var imgData = dataUrl.replace(/^data:image\/(png|jpg);base64,/, "");
-            folder.file("ASG1.png", imgData, { base64: true });
+            folder.file("ASG" + (i++) + ".png", imgData, { base64: true });
         });
 
         var content = zip.generate();
