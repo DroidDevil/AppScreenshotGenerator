@@ -140,6 +140,8 @@ $(function() {
 
             // Not rotated by default
             this.rotated = false;
+
+            this.$el.width("70%");
         },
 
         onDrop: function(e, ui) {
